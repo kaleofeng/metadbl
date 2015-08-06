@@ -1,0 +1,34 @@
+#ifndef _METADB_SQLDEFINE_HPP_
+#define _METADB_SQLDEFINE_HPP_
+
+#include "MetaDb/CoreInclude.hpp"
+
+#include <cstdint>
+#include <cstring>
+
+#include <mysql.h>
+
+DECL_NAMESPACE_METADB_BEGIN
+
+enum SqlType {
+    SQLTYPE_NONE = 0,
+    SQLTYPE_INT8,
+    SQLTYPE_UINT8,
+    SQLTYPE_INT16,
+    SQLTYPE_UINT16,
+    SQLTYPE_INT32,
+    SQLTYPE_UINT32,
+    SQLTYPE_INT64,
+    SQLTYPE_UINT64,
+    SQLTYPE_FLOAT,
+    SQLTYPE_DOUBLE,
+    SQLTYPE_TIMESTAMP,
+    SQLTYPE_STRING,
+    SQLTYPE_VARSTRING,
+    SQLTYPE_BINARY,
+    SQLTYPE_COUNT,
+};
+
+DECL_NAMESPACE_METADB_END
+
+#endif // _METADB_SQLDEFINE_HPP_
