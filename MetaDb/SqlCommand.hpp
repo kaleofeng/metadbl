@@ -50,7 +50,7 @@ public:
 
     bool SetString(int index, const char* value, int length);
 
-    bool SetBinary(int index, const void* data, int length);
+    bool SetBinary(int index, const void* value, int length);
 
     bool Execute();
 
@@ -59,7 +59,7 @@ private:
 
     bool BindParams();
 
-    bool FillField(int index, const void* data, int length);
+    bool FillField(int index, const void* value, int length);
 
     bool CheckIndex(int index) const;
 

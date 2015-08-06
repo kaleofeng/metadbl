@@ -6,6 +6,8 @@
 #include <Metazion/Define.hpp>
 #include <Metazion/Function.hpp>
 
+DECL_NAMESPACE_METADB_BEGIN
+
 template<typename T = char
 , int STATICSIZE = 1024
 , int ALIGNSIZE = 1024>
@@ -62,5 +64,7 @@ private:
     T* m_dynamicBuffer = nullptr;
     int m_dynamicSize = 0;
 };
+
+DECL_NAMESPACE_METADB_END
 
 #endif // _METADB_SQLBUFFER_HPP_

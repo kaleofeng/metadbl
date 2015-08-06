@@ -64,9 +64,10 @@ SqlType SqlFieldToLocalType(enum_field_types fieldType, uint32_t fieldFlags) {
     case MYSQL_TYPE_NEWDATE:
         return SQLTYPE_TIMESTAMP;
     case MYSQL_TYPE_STRING:
+        return SQLTYPE_STRING;
     case MYSQL_TYPE_VARCHAR:
     case MYSQL_TYPE_VAR_STRING:
-        return SQLTYPE_STRING;
+        return SQLTYPE_VARSTRING;
     case MYSQL_TYPE_BLOB:
     case MYSQL_TYPE_TINY_BLOB:
     case MYSQL_TYPE_MEDIUM_BLOB:

@@ -176,7 +176,7 @@ void SqlCommand::AcquireErrorInfo() {
     }
 }
 
-bool SqlCommand::FillField(int index, const void* data, int length) {
+bool SqlCommand::FillField(int index, const void* value, int length) {
     MZ_ASSERT_TRUE(length >= 0);
 
     if (!CheckIndex(index)) {
@@ -192,8 +192,8 @@ bool SqlCommand::FillField(int index, const void* data, int length) {
         return false;
     }
 
-    if (data != nullptr) {
-        memcpy(fieldParam.m_buffer, data, length);
+    if (value != nullptr) {
+        memcpy(fieldParam.m_buffer, value, length);
         fieldParam.m_acturalLength = length;
         fieldParam.m_isNull = 0;
     }
