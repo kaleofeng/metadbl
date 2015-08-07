@@ -44,7 +44,7 @@ public:
             m_buffer = m_dynamicBuffer;
         }
         m_size = alignSize;
-        memset(m_buffer, 0, m_size);
+        memset(m_buffer, 0, m_size * sizeof(T));
     }
 
     T* GetValue(int offset) {

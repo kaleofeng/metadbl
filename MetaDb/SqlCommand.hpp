@@ -12,6 +12,7 @@
 DECL_NAMESPACE_METADB_BEGIN
 
 class SqlConnection;
+class SqlResult;
 
 class SqlCommand {
 public:
@@ -54,12 +55,14 @@ public:
 
     bool Execute();
 
+    bool Execute(SqlResult& sqlResult);
+
 private:
     bool PrepareStatement();
 
     bool BindParams();
 
-    bool FillField(int index, const void* value, int length);
+    bool PushField(int index, const void* value, int length);
 
     bool CheckIndex(int index) const;
 

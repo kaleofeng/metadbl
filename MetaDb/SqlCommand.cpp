@@ -4,6 +4,7 @@
 
 #include "MetaDb/SqlConnection.hpp"
 #include "MetaDb/SqlFunction.hpp"
+#include "MetaDb/SqlResult.hpp"
 
 DECL_NAMESPACE_METADB_BEGIN
 
@@ -38,55 +39,55 @@ bool SqlCommand::Bind(SqlFieldParam* fieldParams, int number) {
 }
 
 bool SqlCommand::SetNull(int index) {
-    return FillField(index, nullptr, 0);
+    return PushField(index, nullptr, 0);
 }
 
 bool SqlCommand::SetInt8(int index, int8_t value) {
-    return FillField(index, &value, sizeof(value));
+    return PushField(index, &value, sizeof(value));
 }
 
 bool SqlCommand::SetUint8(int index, uint8_t value) {
-    return FillField(index, &value, sizeof(value));
+    return PushField(index, &value, sizeof(value));
 }
 
 bool SqlCommand::SetInt16(int index, int16_t value) {
-    return FillField(index, &value, sizeof(value));
+    return PushField(index, &value, sizeof(value));
 }
 
 bool SqlCommand::SetUint16(int index, uint16_t value) {
-    return FillField(index, &value, sizeof(value));
+    return PushField(index, &value, sizeof(value));
 }
 
 bool SqlCommand::SetInt32(int index, int32_t value) {
-    return FillField(index, &value, sizeof(value));
+    return PushField(index, &value, sizeof(value));
 }
 
 bool SqlCommand::SetUint32(int index, uint32_t value) {
-    return FillField(index, &value, sizeof(value));
+    return PushField(index, &value, sizeof(value));
 }
 
 bool SqlCommand::SetInt64(int index, int64_t value) {
-    return FillField(index, &value, sizeof(value));
+    return PushField(index, &value, sizeof(value));
 }
 
 bool SqlCommand::SetUint64(int index, uint64_t value) {
-    return FillField(index, &value, sizeof(value));
+    return PushField(index, &value, sizeof(value));
 }
 
 bool SqlCommand::SetFloat(int index, float value) {
-    return FillField(index, &value, sizeof(value));
+    return PushField(index, &value, sizeof(value));
 }
 
 bool SqlCommand::SetDouble(int index, double value) {
-    return FillField(index, &value, sizeof(value));
+    return PushField(index, &value, sizeof(value));
 }
 
 bool SqlCommand::SetString(int index, const char* value, int length) {
-    return FillField(index, value, length);
+    return PushField(index, value, length);
 }
 
 bool SqlCommand::SetBinary(int index, const void* value, int length) {
-    return FillField(index, value, length);
+    return PushField(index, value, length);
 }
 
 bool SqlCommand::Execute() {
@@ -101,6 +102,22 @@ bool SqlCommand::Execute() {
         return false;
     }
    
+    return true;
+}
+
+bool SqlCommand::Execute(SqlResult& sqlResult) {
+    if (m_stmt == nullptr) {
+        m_sqlConnection.SetLastError("SqlResult Execute Error << stmt has not been parepared");
+        return false;
+    }
+
+    const auto ret = mysql_stmt_execute(m_stmt);
+    if (ret != 0) {
+        AcquireErrorInfo();
+        return false;
+    }
+
+    sqlResult.Reset(&m_sqlConnection, m_stmt);
     return true;
 }
 
@@ -176,18 +193,18 @@ void SqlCommand::AcquireErrorInfo() {
     }
 }
 
-bool SqlCommand::FillField(int index, const void* value, int length) {
+bool SqlCommand::PushField(int index, const void* value, int length) {
     MZ_ASSERT_TRUE(length >= 0);
 
     if (!CheckIndex(index)) {
-        m_sqlConnection.SetLastError("SqlCommand FillField Error << field index[%d]"
+        m_sqlConnection.SetLastError("SqlCommand PushField Error << field index[%d]"
             "out of range[%d", index, m_fieldNumber);
         return false;
     }
 
     auto& fieldParam = m_fieldParams[index];
     if (length > fieldParam.m_length) {
-        m_sqlConnection.SetLastError("SqlCommand FillField Error << data length[%d]"
+        m_sqlConnection.SetLastError("SqlCommand PushField Error << data length[%d]"
             "is greater than buffer length[%d]", length, fieldParam.m_length);
         return false;
     }
