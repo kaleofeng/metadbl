@@ -10,6 +10,12 @@
 DECL_NAMESPACE_METADB_BEGIN
 
 class SqlTableSchema {
+
+private:
+    std::string m_dbName;
+    std::string m_tableName;
+    std::vector<SqlTableField> m_fields;
+
 public:
     SqlTableSchema();
 
@@ -36,11 +42,6 @@ public:
     void AppendField(const SqlTableField& tableField);
 
     void RemoveAllField();
-
-private:
-    std::string m_dbName;
-    std::string m_tableName;
-    std::vector<SqlTableField> m_fields;
 };
 
 inline const std::string& SqlTableSchema::GetDbName() const {

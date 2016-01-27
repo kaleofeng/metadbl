@@ -8,6 +8,7 @@
 DECL_NAMESPACE_METADB_BEGIN
 
 struct SqlFieldParam {
+
     SqlType m_sqlType = SQLTYPE_NONE;
     char* m_buffer = nullptr;
     int m_length = 0;

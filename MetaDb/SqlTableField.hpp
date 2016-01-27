@@ -8,6 +8,15 @@
 DECL_NAMESPACE_METADB_BEGIN
 
 struct SqlTableField {
+
+    int  m_length = 0;
+    bool m_nullable = false;
+    bool m_autoIncrement = false;
+    bool m_primaryKey = false;
+    SqlType m_sqlType = SQLTYPE_NONE;
+    std::string m_name;
+    std::string m_defaultValue;
+
     SqlTableField() {}
 
     SqlTableField(const SqlTableField& other) {
@@ -45,15 +54,6 @@ struct SqlTableField {
 
         return *this;
     }
-
-
-    int  m_length = 0;
-    bool m_nullable = false;
-    bool m_autoIncrement = false;
-    bool m_primaryKey = false;
-    SqlType m_sqlType = SQLTYPE_NONE;
-    std::string m_name;
-    std::string m_defaultValue;
 };
 
 DECL_NAMESPACE_METADB_END

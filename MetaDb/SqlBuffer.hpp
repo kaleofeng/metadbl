@@ -12,6 +12,14 @@ template<typename T = char
 , int STATICSIZE = 1024
 , int ALIGNSIZE = 1024>
 class SqlBuffer {
+
+private:
+    T* m_buffer = nullptr;
+    int m_size = 0;
+    T m_staticBuffer[STATICSIZE] = {};
+    T* m_dynamicBuffer = nullptr;
+    int m_dynamicSize = 0;
+
 public:
     SqlBuffer() {}
 
@@ -56,13 +64,6 @@ public:
     int GetSize() const {
         return m_size;
     }
-
-private:
-    T* m_buffer = nullptr;
-    int m_size = 0;
-    T m_staticBuffer[STATICSIZE] = {};
-    T* m_dynamicBuffer = nullptr;
-    int m_dynamicSize = 0;
 };
 
 DECL_NAMESPACE_METADB_END

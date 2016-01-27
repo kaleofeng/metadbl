@@ -15,6 +15,18 @@ class SqlConnection;
 class SqlResult;
 
 class SqlCommand {
+
+private:
+    SqlConnection& m_sqlConnection;
+
+    MYSQL_STMT* m_stmt = nullptr;
+    std::string m_sql;
+    SqlFieldParam* m_fieldParams = nullptr;
+    int m_fieldNumber = 0;
+
+    SqlBuffer<MYSQL_BIND, 16, 2> m_bindBuffer;
+    SqlBuffer<char, 1024, 1024> m_dataBuffer;
+
 public:
     SqlCommand(SqlConnection& sqlConnection);
 
@@ -67,17 +79,6 @@ private:
     bool CheckIndex(int index) const;
 
     void AcquireErrorInfo();
-
-private:
-    SqlConnection& m_sqlConnection;
-
-    MYSQL_STMT* m_stmt = nullptr;
-    std::string m_sql;
-    SqlFieldParam* m_fieldParams = nullptr;
-    int m_fieldNumber = 0;
-
-    SqlBuffer<MYSQL_BIND, 16, 2> m_bindBuffer;
-    SqlBuffer<char, 1024, 1024> m_dataBuffer;
 };
 
 DECL_NAMESPACE_METADB_END

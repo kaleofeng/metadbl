@@ -10,6 +10,7 @@
 DECL_NAMESPACE_METADB_BEGIN
 
 class SqlConnection {
+
 public:
     struct Param {
         Param() = default;
@@ -31,6 +32,21 @@ public:
         std::string m_password;
         std::string m_dbName;
     };
+
+
+private:
+    std::string m_defaultCharset = { "utf8" };
+    int m_timeoutSeconds = 10;
+    bool m_autoReconnect = true;
+
+    int m_errorCode = 0;
+    std::string m_errorMsg;
+    char m_lastError[256] = { 0 };
+
+    MYSQL* m_mysql = nullptr;
+    Param m_param;
+
+    int64_t m_connectTime = 0;
 
 public:
     SqlConnection();
@@ -75,20 +91,6 @@ public:
     void SetLastError(const char* format, Args... args);
 
     MYSQL* GetMysql();
-
-private:
-    std::string m_defaultCharset = { "utf8" };
-    int m_timeoutSeconds = 10;
-    bool m_autoReconnect = true;
-
-    int m_errorCode = 0;
-    std::string m_errorMsg;
-    char m_lastError[256] = { 0 };
-    
-    MYSQL* m_mysql = nullptr;
-    Param m_param;
-
-    int64_t m_connectTime = 0;
 };
 
 inline const char* SqlConnection::GetDefaultCharset() const {

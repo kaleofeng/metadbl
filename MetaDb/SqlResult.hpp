@@ -14,6 +14,17 @@ DECL_NAMESPACE_METADB_BEGIN
 class SqlConnection;
 
 class SqlResult {
+
+private:
+    SqlConnection* m_sqlConnection = nullptr;
+    MYSQL_STMT* m_stmt = nullptr;
+
+    SqlFieldParam* m_fieldParams = nullptr;
+    int m_fieldNumber = 0;
+
+    SqlBuffer<MYSQL_BIND, 16, 2> m_bindBuffer;
+    SqlBuffer<char, 1024, 1024> m_dataBuffer;
+
 public:
     SqlResult();
 
@@ -60,16 +71,6 @@ private:
     bool CheckIndex(int index) const;
 
     void AcquireErrorInfo();
-
-private:
-    SqlConnection* m_sqlConnection = nullptr;
-    MYSQL_STMT* m_stmt = nullptr;
-
-    SqlFieldParam* m_fieldParams = nullptr;
-    int m_fieldNumber = 0;
-
-    SqlBuffer<MYSQL_BIND, 16, 2> m_bindBuffer;
-    SqlBuffer<char, 1024, 1024> m_dataBuffer;
 };
 
 DECL_NAMESPACE_METADB_END
