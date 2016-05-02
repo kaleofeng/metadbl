@@ -5,6 +5,8 @@
 
 #include <string>
 
+#include <Metazion/Define.hpp>
+
 #include "MetaDb/SqlDefine.hpp"
 
 DECL_NAMESPACE_METADB_BEGIN
@@ -139,7 +141,8 @@ inline const char* SqlConnection::GetLastError() const {
 
 template<typename... Args>
 inline void SqlConnection::SetLastError(const char* format, Args... args) {
-    snprintf(m_lastError, sizeof(m_lastError), format, args...);
+    const auto length = snprintf(m_lastError, sizeof(m_lastError), format, args...);
+    MZ_ASSERT_TRUE(length >= 0);
 }
 
 inline MYSQL* SqlConnection::GetMysql() {

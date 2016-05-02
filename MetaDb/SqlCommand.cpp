@@ -32,7 +32,7 @@ bool SqlCommand::Bind(SqlFieldParam* fieldParams, int number) {
             ", but in[%d]", paramCount, number);
         return false;
     }
-    
+
     m_fieldParams = fieldParams;
     m_fieldNumber = number;
     return BindParams();
@@ -97,11 +97,11 @@ bool SqlCommand::Execute() {
     }
 
     const auto ret = mysql_stmt_execute(m_stmt);
-    if (ret != 0)  {
+    if (ret != 0) {
         AcquireErrorInfo();
         return false;
     }
-   
+
     return true;
 }
 
@@ -218,7 +218,7 @@ bool SqlCommand::PushField(int index, const void* value, int length) {
         fieldParam.m_acturalLength = 0;
         fieldParam.m_isNull = 1;
     }
-    
+
     return true;
 }
 
