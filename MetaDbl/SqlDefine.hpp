@@ -1,7 +1,7 @@
 #ifndef _METADB_SQLDEFINE_HPP_
 #define _METADB_SQLDEFINE_HPP_
 
-#include "MetaDb/CoreInclude.hpp"
+#include "MetaDbl/CoreInclude.hpp"
 
 #include <cstdint>
 #include <cstring>

@@ -1,13 +1,13 @@
 #ifndef _METADB_SQLCONNECTION_HPP_
 #define _METADB_SQLCONNECTION_HPP_
 
-#include "MetaDb/CoreInclude.hpp"
+#include "MetaDbl/CoreInclude.hpp"
 
 #include <string>
 
 #include <Metazion/Define.hpp>
 
-#include "MetaDb/SqlDefine.hpp"
+#include "MetaDbl/SqlDefine.hpp"
 
 DECL_NAMESPACE_METADB_BEGIN
 

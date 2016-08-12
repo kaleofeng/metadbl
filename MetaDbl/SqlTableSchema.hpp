@@ -1,11 +1,11 @@
 #ifndef _METADB_SQLTABLESCHEMA_HPP_
 #define _METADB_SQLTABLESCHEMA_HPP_
 
-#include "MetaDb/CoreInclude.hpp"
+#include "MetaDbl/CoreInclude.hpp"
 
 #include <vector>
 
-#include "MetaDb/SqlTableField.hpp"
+#include "MetaDbl/SqlTableField.hpp"
 
 DECL_NAMESPACE_METADB_BEGIN
 

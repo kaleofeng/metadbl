@@ -1,9 +1,9 @@
-#include "MetaDb/SqlResult.hpp"
+#include "MetaDbl/SqlResult.hpp"
 
 #include <Metazion/Define.hpp>
 
-#include "MetaDb/SqlConnection.hpp"
-#include "MetaDb/SqlFunction.hpp"
+#include "MetaDbl/SqlConnection.hpp"
+#include "MetaDbl/SqlFunction.hpp"
 
 DECL_NAMESPACE_METADB_BEGIN
 

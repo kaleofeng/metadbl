@@ -1,9 +1,9 @@
 #ifndef _METADB_SQLFUNCTION_HPP_
 #define _METADB_SQLFUNCTION_HPP_
 
-#include "MetaDb/CoreInclude.hpp"
+#include "MetaDbl/CoreInclude.hpp"
 
-#include "MetaDb/SqlDefine.hpp"
+#include "MetaDbl/SqlDefine.hpp"
 
 DECL_NAMESPACE_METADB_BEGIN
 

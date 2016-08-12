@@ -1,10 +1,10 @@
-#include "MetaDb/SqlCommand.hpp"
+#include "MetaDbl/SqlCommand.hpp"
 
 #include <Metazion/Define.hpp>
 
-#include "MetaDb/SqlConnection.hpp"
-#include "MetaDb/SqlFunction.hpp"
-#include "MetaDb/SqlResult.hpp"
+#include "MetaDbl/SqlConnection.hpp"
+#include "MetaDbl/SqlFunction.hpp"
+#include "MetaDbl/SqlResult.hpp"
 
 DECL_NAMESPACE_METADB_BEGIN
 

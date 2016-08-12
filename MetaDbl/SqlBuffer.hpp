@@ -1,7 +1,7 @@
 #ifndef _METADB_SQLBUFFER_HPP_
 #define _METADB_SQLBUFFER_HPP_
 
-#include "MetaDb/CoreInclude.hpp"
+#include "MetaDbl/CoreInclude.hpp"
 
 #include <Metazion/Define.hpp>
 #include <Metazion/Function.hpp>

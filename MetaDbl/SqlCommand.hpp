@@ -1,13 +1,13 @@
 #ifndef _METADB_SQLCOMMAND_HPP_
 #define _METADB_SQLCOMMAND_HPP_
 
-#include "MetaDb/CoreInclude.hpp"
+#include "MetaDbl/CoreInclude.hpp"
 
 #include <string>
 
-#include "MetaDb/SqlBuffer.hpp"
-#include "MetaDb/SqlDefine.hpp"
-#include "MetaDb/SqlFieldParam.hpp"
+#include "MetaDbl/SqlBuffer.hpp"
+#include "MetaDbl/SqlDefine.hpp"
+#include "MetaDbl/SqlFieldParam.hpp"
 
 DECL_NAMESPACE_METADB_BEGIN
 
