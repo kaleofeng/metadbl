@@ -1,11 +1,11 @@
-#ifndef _METADB_SQLFUNCTION_HPP_
-#define _METADB_SQLFUNCTION_HPP_
+#ifndef _METADBL_SQLFUNCTION_HPP_
+#define _METADBL_SQLFUNCTION_HPP_
 
 #include "MetaDbl/CoreInclude.hpp"
 
 #include "MetaDbl/SqlDefine.hpp"
 
-DECL_NAMESPACE_METADB_BEGIN
+DECL_NAMESPACE_METADBL_BEGIN
 
 SqlType SqlFieldToLocalType(enum_field_types fieldType, uint32_t fieldFlags);
 
@@ -15,6 +15,6 @@ bool SqlIsLocalTypeUnsigned(SqlType sqlType);
 
 int SqlLocalGetDefaultLength(SqlType sqlType);
 
-DECL_NAMESPACE_METADB_END
+DECL_NAMESPACE_METADBL_END
 
-#endif // _METADB_SQLFUNCTION_HPP_
+#endif // _METADBL_SQLFUNCTION_HPP_

@@ -1,5 +1,5 @@
-#ifndef _METADB_SQLTABLESCHEMA_HPP_
-#define _METADB_SQLTABLESCHEMA_HPP_
+#ifndef _METADBL_SQLTABLESCHEMA_HPP_
+#define _METADBL_SQLTABLESCHEMA_HPP_
 
 #include "MetaDbl/CoreInclude.hpp"
 
@@ -7,7 +7,7 @@
 
 #include "MetaDbl/SqlTableField.hpp"
 
-DECL_NAMESPACE_METADB_BEGIN
+DECL_NAMESPACE_METADBL_BEGIN
 
 class SqlTableSchema {
 
@@ -80,6 +80,6 @@ inline void SqlTableSchema::RemoveAllField() {
     m_fields.clear();
 }
 
-DECL_NAMESPACE_METADB_END
+DECL_NAMESPACE_METADBL_END
 
-#endif // _METADB_SQLTABLESCHEMA_HPP_
+#endif // _METADBL_SQLTABLESCHEMA_HPP_

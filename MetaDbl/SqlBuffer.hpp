@@ -1,12 +1,12 @@
-#ifndef _METADB_SQLBUFFER_HPP_
-#define _METADB_SQLBUFFER_HPP_
+#ifndef _METADBL_SQLBUFFER_HPP_
+#define _METADBL_SQLBUFFER_HPP_
 
 #include "MetaDbl/CoreInclude.hpp"
 
 #include <Metazion/Define.hpp>
 #include <Metazion/Function.hpp>
 
-DECL_NAMESPACE_METADB_BEGIN
+DECL_NAMESPACE_METADBL_BEGIN
 
 template<typename T = char
 , int STATICSIZE = 1024
@@ -69,6 +69,6 @@ public:
     }
 };
 
-DECL_NAMESPACE_METADB_END
+DECL_NAMESPACE_METADBL_END
 
-#endif // _METADB_SQLBUFFER_HPP_
+#endif // _METADBL_SQLBUFFER_HPP_

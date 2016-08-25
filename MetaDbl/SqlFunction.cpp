@@ -1,6 +1,6 @@
 #include "MetaDbl/SqlFunction.hpp"
 
-DECL_NAMESPACE_METADB_BEGIN
+DECL_NAMESPACE_METADBL_BEGIN
 
 struct SqlTypeInfo {
     SqlTypeInfo(SqlType sqlType
@@ -104,4 +104,4 @@ int SqlLocalGetDefaultLength(SqlType sqlType) {
     return sqlTypeInfo.m_defaultLength;
 }
 
-DECL_NAMESPACE_METADB_END
+DECL_NAMESPACE_METADBL_END

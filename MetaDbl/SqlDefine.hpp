@@ -1,5 +1,5 @@
-#ifndef _METADB_SQLDEFINE_HPP_
-#define _METADB_SQLDEFINE_HPP_
+#ifndef _METADBL_SQLDEFINE_HPP_
+#define _METADBL_SQLDEFINE_HPP_
 
 #include "MetaDbl/CoreInclude.hpp"
 
@@ -8,7 +8,7 @@
 
 #include <mysql.h>
 
-DECL_NAMESPACE_METADB_BEGIN
+DECL_NAMESPACE_METADBL_BEGIN
 
 enum SqlType {
 
@@ -30,6 +30,6 @@ enum SqlType {
     SQLTYPE_COUNT,
 };
 
-DECL_NAMESPACE_METADB_END
+DECL_NAMESPACE_METADBL_END
 
-#endif // _METADB_SQLDEFINE_HPP_
+#endif // _METADBL_SQLDEFINE_HPP_

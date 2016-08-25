@@ -2,7 +2,7 @@
 
 #include <Metazion/Share/Time/Time.hpp>
 
-DECL_NAMESPACE_METADB_BEGIN
+DECL_NAMESPACE_METADBL_BEGIN
 
 SqlConnection::SqlConnection() {}
 
@@ -100,4 +100,4 @@ void SqlConnection::SetErrorInfo(int errorCode, const char* errorMsg) {
     SetLastError("Interal Error << errorCode[%d] errorMsg[%s]", errorCode, errorMsg);
 }
 
-DECL_NAMESPACE_METADB_END
+DECL_NAMESPACE_METADBL_END

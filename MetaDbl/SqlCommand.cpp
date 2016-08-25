@@ -6,7 +6,7 @@
 #include "MetaDbl/SqlFunction.hpp"
 #include "MetaDbl/SqlResult.hpp"
 
-DECL_NAMESPACE_METADB_BEGIN
+DECL_NAMESPACE_METADBL_BEGIN
 
 SqlCommand::SqlCommand(SqlConnection& sqlConnection)
     : m_sqlConnection(sqlConnection) {}
@@ -226,4 +226,4 @@ bool SqlCommand::CheckIndex(int index) const {
     return index >= 0 && index < m_fieldNumber;
 }
 
-DECL_NAMESPACE_METADB_END
+DECL_NAMESPACE_METADBL_END

@@ -1,5 +1,5 @@
-#ifndef _METADB_SQLCONNECTION_HPP_
-#define _METADB_SQLCONNECTION_HPP_
+#ifndef _METADBL_SQLCONNECTION_HPP_
+#define _METADBL_SQLCONNECTION_HPP_
 
 #include "MetaDbl/CoreInclude.hpp"
 
@@ -9,7 +9,7 @@
 
 #include "MetaDbl/SqlDefine.hpp"
 
-DECL_NAMESPACE_METADB_BEGIN
+DECL_NAMESPACE_METADBL_BEGIN
 
 class SqlConnection {
 
@@ -149,6 +149,6 @@ inline MYSQL* SqlConnection::GetMysql() {
     return m_mysql;
 }
 
-DECL_NAMESPACE_METADB_END
+DECL_NAMESPACE_METADBL_END
 
-#endif // _METADB_SQLCONNECTION_HPP_
+#endif // _METADBL_SQLCONNECTION_HPP_

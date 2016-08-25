@@ -1,9 +1,9 @@
-#ifndef _METADB_COREINCLUDE_HPP_
-#define _METADB_COREINCLUDE_HPP_
+#ifndef _METADBL_COREINCLUDE_HPP_
+#define _METADBL_COREINCLUDE_HPP_
 
-#define NS_METADB                       metadb
-#define DECL_NAMESPACE_METADB_BEGIN     namespace NS_METADB {
-#define DECL_NAMESPACE_METADB_END       }
-#define USING_NAMESPACE_METADB          using namespace NS_METADB;
+#define NS_METADBL                       metadbl
+#define DECL_NAMESPACE_METADBL_BEGIN     namespace NS_METADBL {
+#define DECL_NAMESPACE_METADBL_END       }
+#define USING_NAMESPACE_METADBL          using namespace NS_METADBL;
 
-#endif // _METADB_COREINCLUDE_HPP_
+#endif // _METADBL_COREINCLUDE_HPP_

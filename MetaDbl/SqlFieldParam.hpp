@@ -1,11 +1,11 @@
-#ifndef _METADB_SQLFIELDPARAM_HPP_
-#define _METADB_SQLFIELDPARAM_HPP_
+#ifndef _METADBL_SQLFIELDPARAM_HPP_
+#define _METADBL_SQLFIELDPARAM_HPP_
 
 #include "MetaDbl/CoreInclude.hpp"
 
 #include "MetaDbl/SqlDefine.hpp"
 
-DECL_NAMESPACE_METADB_BEGIN
+DECL_NAMESPACE_METADBL_BEGIN
 
 struct SqlFieldParam {
 
@@ -19,6 +19,6 @@ struct SqlFieldParam {
     my_bool m_error = 0;
 };
 
-DECL_NAMESPACE_METADB_END
+DECL_NAMESPACE_METADBL_END
 
-#endif // _METADB_SQLFIELDPARAM_HPP_
+#endif // _METADBL_SQLFIELDPARAM_HPP_

@@ -1,6 +1,6 @@
 #include "MetaDbl/SqlTableSchema.hpp"
 
-DECL_NAMESPACE_METADB_BEGIN
+DECL_NAMESPACE_METADBL_BEGIN
 
 SqlTableSchema::SqlTableSchema() {}
 
@@ -32,4 +32,4 @@ SqlTableSchema& SqlTableSchema::operator =(SqlTableSchema&& other) {
     return *this;
 }
 
-DECL_NAMESPACE_METADB_END
+DECL_NAMESPACE_METADBL_END

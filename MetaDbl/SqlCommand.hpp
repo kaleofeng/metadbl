@@ -1,5 +1,5 @@
-#ifndef _METADB_SQLCOMMAND_HPP_
-#define _METADB_SQLCOMMAND_HPP_
+#ifndef _METADBL_SQLCOMMAND_HPP_
+#define _METADBL_SQLCOMMAND_HPP_
 
 #include "MetaDbl/CoreInclude.hpp"
 
@@ -9,7 +9,7 @@
 #include "MetaDbl/SqlDefine.hpp"
 #include "MetaDbl/SqlFieldParam.hpp"
 
-DECL_NAMESPACE_METADB_BEGIN
+DECL_NAMESPACE_METADBL_BEGIN
 
 class SqlConnection;
 class SqlResult;
@@ -81,6 +81,6 @@ private:
     void AcquireErrorInfo();
 };
 
-DECL_NAMESPACE_METADB_END
+DECL_NAMESPACE_METADBL_END
 
-#endif // _METADB_SQLCOMMAND_HPP_
+#endif // _METADBL_SQLCOMMAND_HPP_
