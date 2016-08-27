@@ -1,5 +1,5 @@
-rm -rf Build
-mkdir Build
-cd Build
-cmake -G "Xcode" ..
-cd ..
+rm -rf Build/Macos
+mkdir -p Build/Macos
+cd Build/Macos
+cmake -G "Xcode" ../..
+cd ../..
