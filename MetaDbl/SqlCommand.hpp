@@ -61,6 +61,8 @@ public:
 
     bool SetDouble(int index, double value);
 
+    bool SetTimestamp(int index, int64_t value);
+
     bool SetString(int index, const char* value, int length);
 
     bool SetBinary(int index, const void* value, int length);

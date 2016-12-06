@@ -1,5 +1,8 @@
 #include "MetaDbl/SqlCommand.hpp"
 
+#include <ctime>
+#include <chrono>
+
 #include <Metazion/Define.hpp>
 
 #include "MetaDbl/SqlConnection.hpp"
@@ -80,6 +83,24 @@ bool SqlCommand::SetFloat(int index, float value) {
 
 bool SqlCommand::SetDouble(int index, double value) {
     return PushField(index, &value, sizeof(value));
+}
+
+bool SqlCommand::SetTimestamp(int index, int64_t value) {
+    const auto btd = std::chrono::milliseconds(value);
+    const auto btp = std::chrono::time_point<std::chrono::system_clock, std::chrono::milliseconds>(btd);
+    const auto btt = std::chrono::system_clock::to_time_t(btp);
+    const auto btm = std::localtime(&btt);
+    MYSQL_TIME mst;
+    mst.year = btm->tm_year + 1900;
+    mst.month = btm->tm_mon + 1;
+    mst.day = btm->tm_mday;
+    mst.hour = btm->tm_hour;
+    mst.minute = btm->tm_min;
+    mst.second = btm->tm_sec;
+    mst.second_part = 0;
+    mst.neg = 0;
+    mst.time_type = MYSQL_TIMESTAMP_DATETIME;
+    return PushField(index, &mst, sizeof(mst));
 }
 
 bool SqlCommand::SetString(int index, const char* value, int length) {
